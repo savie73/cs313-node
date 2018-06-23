@@ -39,7 +39,14 @@ function computeOperation(response, m, w) {
 	var result = 0;
 
 	if(m == "lstamped") {
-		result = w * .50;
+		if(w >= 3.5)
+		{
+			result = 1.13;
+		}
+		else {
+			result = (w - 1) * 0.21 + 0.5;
+		}
+
 	} else if (m == "lmetered") {
 		result = w * .47;
 	} else if (m == "large") {
