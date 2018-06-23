@@ -14,6 +14,10 @@ app.get('/math', function(request, response) {
 	handleMath(request, response);
 });
 
+app.get('/', function(request, response) {
+	response.render('pages/form');
+})
+
 app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
 });
@@ -49,4 +53,4 @@ function computeOperation(response, m, w) {
 	var params = {mail: m, weight: w, result: result};
 	response.render('pages/result', params);
 
-}in
+}
