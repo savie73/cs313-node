@@ -48,11 +48,34 @@ function computeOperation(response, m, w) {
 		}
 
 	} else if (m == "lmetered") {
-		result = w * .47;
+		if(w >= 3.5) {
+			result = 1.10;
+		}
+		else {
+			result = (w - 1) * 0.21 + 0.47;
+		}
 	} else if (m == "large") {
-		result = w * 1;
+		if (w >= 13) {
+				result =  3.52;
+			}
+			else {
+				result = (w - 1) * 0.21 + 1;
+			}
 	} else if (m == "first") {
-		result = w * 3.50;
+		if (w <= 4)
+				result =  3.50;
+			else if (w <= 8)
+				result = 3.75;
+			else if (w <= 9)
+				result = 4.10;
+			else if (w <= 10)
+				result = 4.45;
+			else if (w <= 11)
+				result = 4.80;
+			else if (w <= 12)
+				result = 5.15;
+			else
+				result = 5.50;
 	} else {
 
 	}
